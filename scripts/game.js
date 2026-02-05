@@ -25,7 +25,7 @@ const affectionMessages = [
     { text: "You're a natural entertainer! 🎭", emoji: "🎭" },
     { text: "Your compassion knows no bounds! 💗", emoji: "💗" },
     { text: "You inspire everyone around you! 🌟", emoji: "🌟" },
-    { text: "Your optimism is contagious! 🌈", emoji: "🌈" },
+    { text: "Your optimism is contagious! �🇪", emoji: "🇰🇪" },
     { text: "You love fiercely & deeply! 🌹", emoji: "🌹" },
     { text: "You are Tafach 💕", emoji: "💕" },
 ];
@@ -97,6 +97,9 @@ function collectHeart(e) {
         e.target.remove();
     }, 300);
     
+    // Add delay after smile emoji messages
+    const delayTime = message.emoji === '😄' ? 2000 : 400;
+    
     // Check if all hearts in current batch are gone
     setTimeout(() => {
         const allHearts = document.querySelectorAll('.heart');
@@ -114,7 +117,7 @@ function collectHeart(e) {
                 gameActive = false;
                 setTimeout(() => {
                     showMoreButton();
-                }, 1500);
+                }, 1700 + delayTime);
             }
         }
     }, 400);
