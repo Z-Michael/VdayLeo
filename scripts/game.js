@@ -110,9 +110,11 @@ function collectHeart(e) {
                     showCelebration();
                 }, 500);
             } else {
-                // Show "more to click babe" button
+                // Show "more to click babe" button with delay
                 gameActive = false;
-                showMoreButton();
+                setTimeout(() => {
+                    showMoreButton();
+                }, 1500);
             }
         }
     }, 400);
