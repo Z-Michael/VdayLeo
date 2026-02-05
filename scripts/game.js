@@ -8,26 +8,26 @@ const gameContainer = document.getElementById('game-container');
 
 // Different affection messages with emojis - English, Amharic & Swahili blend
 const affectionMessages = [
-    { text: "You make my heart skip a beat! 💗", emoji: "💗" },
-    { text: "Amet'aleh (I love you)! 😍", emoji: "😍" },
-    { text: "Nakupenda sana (I love you deeply)! 🌹", emoji: "🌹" },
-    { text: "Every day with you is a blessing! ✨", emoji: "✨" },
-    { text: "You light up my world! ☀️", emoji: "☀️" },
-    { text: "Konjo (Darling), you're my forever! ♾️", emoji: "♾️" },
-    { text: "You're my person! 👫", emoji: "👫" },
-    { text: "I adore you more each day! 💕", emoji: "💕" },
-    { text: "You complete me! 💑", emoji: "💑" },
-    { text: "Wewe ni moyo yangu (You are my heart)! 💝", emoji: "💝" },
-    { text: "You're absolutely stunning! 🌟", emoji: "🌟" },
-    { text: "Selamem (Forever) with you! 🍀", emoji: "🍀" },
-    { text: "Your confidence captivates me! 👑", emoji: "👑" },
-    { text: "You're a queen and I cherish you! 👸", emoji: "👸" },
-    { text: "Alemedelem (Beautiful) in every way! 🔥", emoji: "🔥" },
-    { text: "You shine brighter than any star! ⭐", emoji: "⭐" },
-    { text: "Your strength amazes me daily! 💪", emoji: "💪" },
-    { text: "You're majestic and kind! 🦁", emoji: "🦁" },
-    { text: "Your warmth melts my heart! 💎", emoji: "💎" },
-    { text: "You're my forever person! ♥️", emoji: "♥️" },
+    { text: "You're confident & magnetic! 👑", emoji: "👑" },
+    { text: "Your charisma is irresistible! ✨", emoji: "✨" },
+    { text: "You lead with grace & strength! 💪", emoji: "💪" },
+    { text: "Your loyalty is unmatched! ♥️", emoji: "♥️" },
+    { text: "You're passionate about everything! 🔥", emoji: "🔥" },
+    { text: "Your generosity melts my heart! 💕", emoji: "💕" },
+    { text: "You're naturally creative & artistic! 🎨", emoji: "🎨" },
+    { text: "Your warmth brings joy to all! ☀️", emoji: "☀️" },
+    { text: "You're ambitious & driven! 🚀", emoji: "🚀" },
+    { text: "Your humor lights up my world! 😄", emoji: "😄" },
+    { text: "You're fiercely protective of loved ones! 🦁", emoji: "🦁" },
+    { text: "Your beauty shines from within! 💎", emoji: "💎" },
+    { text: "You're independent & strong-willed! 💪", emoji: "💪" },
+    { text: "Your honesty is refreshingly rare! ⭐", emoji: "⭐" },
+    { text: "You're a natural entertainer! 🎭", emoji: "🎭" },
+    { text: "Your compassion knows no bounds! 💗", emoji: "💗" },
+    { text: "You inspire everyone around you! 🌟", emoji: "🌟" },
+    { text: "Your optimism is contagious! 🌈", emoji: "🌈" },
+    { text: "You love fiercely & deeply! 🌹", emoji: "🌹" },
+    { text: "You are Tafach 💕", emoji: "💕" },
 ];
 
 if (startButton) {
@@ -39,7 +39,7 @@ function startGame() {
     score = 0;
     messageIndex = 0;
     gameContainer.innerHTML = `
-        <h2>What I Feel For You 💕</h2>
+        <h2> Mpenzi wangu 💕</h2>
         <p id="score">Messages: ${score} / 20</p>
         <div id="message-display"></div>
         <div id="hearts-container"></div>
@@ -82,26 +82,13 @@ function collectHeart(e) {
     document.getElementById('score').textContent = `Messages: ${score} / 20`;
     
     const messageDisplay = document.getElementById('message-display');
-    
-    const isPhotoSurprise = Math.random() < 0.3;
-    
-    if (isPhotoSurprise) {
-        messageDisplay.innerHTML = `
-            <div class="message-box photo-surprise">
-                <p class="surprise-text">OMG! 😍 Here's us!</p>
-                <img src="assets/images/couple.jpg" alt="Our special moment" class="photo-display" onerror="this.parentElement.innerHTML='<p>Add your photo to assets/images/couple.jpg!</p>'">
-                <p class="affection-text">You make me so happy! 💕</p>
-            </div>
-        `;
-    } else {
-        const message = affectionMessages[messageIndex % affectionMessages.length];
-        messageDisplay.innerHTML = `
-            <div class="message-box">
-                <p class="message-text">${message.text}</p>
-            </div>
-        `;
-        messageIndex++;
-    }
+    const message = affectionMessages[messageIndex % affectionMessages.length];
+    messageDisplay.innerHTML = `
+        <div class="message-box">
+            <p class="message-text">${message.text}</p>
+        </div>
+    `;
+    messageIndex++;
     
     // Remove the clicked heart
     e.target.style.opacity = '0';
@@ -133,6 +120,10 @@ function collectHeart(e) {
 
 function showMoreButton() {
     const endButton = document.getElementById('end-button');
+    const messageDisplay = document.getElementById('message-display');
+    
+    messageDisplay.innerHTML = '<p style="font-size: 80px; margin: 20px 0;">😄</p>';
+    
     endButton.textContent = '💕 More to click babe... 💕';
     endButton.style.background = 'linear-gradient(135deg, #ff69b4 0%, #ff1493 100%)';
     endButton.style.transform = 'scale(1.1)';
@@ -162,9 +153,9 @@ function showCelebration() {
     gameContainer.innerHTML = `
         <div class="celebration-box">
             <p class="flower-emoji">🌹🌹🌹</p>
-            <h2>Happy Valentine's Day! 💕</h2>
-            <p class="celebration-text">You've revealed all <strong>${score}</strong> messages of my affection!</p>
-            <p class="celebration-message">Thank you for being the light in my life!</p>
+            <h2>My Leo 👑</h2>
+            <p class="celebration-text" style="font-size: 36px; font-weight: bold; margin: 30px 0; color: #ff1493;">Can you be my Valentine? 💕</p>
+            <p class="celebration-message">You've revealed all <strong>${score}</strong> messages of my affection for your incredible qualities!</p>
             <p class="flower-emoji">🌹🌹🌹</p>
             <button id="start-button" class="game-button">Play Again</button>
         </div>
