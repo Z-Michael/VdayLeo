@@ -43,13 +43,9 @@ function startGame() {
         <p id="score">Messages: ${score} / 20</p>
         <div id="message-display"></div>
         <div id="hearts-container"></div>
-        <button id="end-button" class="game-button">Stop</button>
     `;
     
     generateHearts(5);
-    const endButton = document.getElementById('end-button');
-    endButton.onclick = null;
-    endButton.addEventListener('click', endGame);
 }
 
 function generateHearts(count = 5) {
@@ -160,7 +156,6 @@ function showCelebration() {
             <p class="flower-emoji">🌹🌹🌹</p>
             <h2>My Leo 👑</h2>
             <p class="celebration-text" style="font-size: 36px; font-weight: bold; margin: 30px 0; color: #ff1493;">Can you be my Valentine? 💕</p>
-            <p class="celebration-message">You've revealed all <strong>${score}</strong> messages of my affection for your incredible qualities!</p>
             <p class="flower-emoji">🌹🌹🌹</p>
             <button id="start-button" class="game-button">Play Again</button>
         </div>
