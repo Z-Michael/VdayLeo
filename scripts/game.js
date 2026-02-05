@@ -25,7 +25,7 @@ const affectionMessages = [
     { text: "You're a natural entertainer! 🎭", emoji: "🎭" },
     { text: "Your compassion knows no bounds! 💗", emoji: "💗" },
     { text: "You inspire everyone around you! 🌟", emoji: "🌟" },
-    { text: "Your optimism is contagious! �🇪", emoji: "🇰🇪" },
+    { text: "Your optimism is contagious! ☀️", emoji: "☀️" },
     { text: "You love fiercely & deeply! 🌹", emoji: "🌹" },
     { text: "You are Tafach 💕", emoji: "💕" },
 ];
