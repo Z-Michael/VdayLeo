@@ -199,7 +199,7 @@ function showCelebration() {
     `;
     
     startButton.style.display = 'block';
-    startButton.textContent = '🔄 Replay 💕';
+    startButton.textContent = '🔄 Click to Start Over 💕';
     startButton.removeEventListener('click', startGame);
     startButton.addEventListener('click', startGame);
 }
